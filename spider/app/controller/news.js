@@ -2,11 +2,11 @@
 
 const Controller = require('egg').Controller;
 
-class HomeController extends Controller {
+class NewsController extends Controller {
   async index() {
     const { ctx } = this;
-    ctx.body = 'hi, 首页';
+    ctx.body = '新闻';
   }
 }
 
-module.exports = HomeController;
+module.exports = NewsController;
