@@ -5,7 +5,10 @@ const Controller = require('egg').Controller;
 class NewsController extends Controller {
   async index() {
     const { ctx } = this;
-    ctx.body = '新闻';
+    let list = await this.service.news.getNewsList();
+    console.log(list);
+    // ctx.body = '新闻';
+    ctx.body = list;
   }
 }
 
