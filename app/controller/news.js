@@ -7,10 +7,18 @@ class NewsController extends Controller {
     // this.ctx.body = '新闻页面';
 
     let msg = 'ejs';
-    let list = ['1111', '2222', '3333'];
+
+    console.log(this.config.api);
+
+    // 注意异步
+    let list = await this.service.news.getNewsList();
+
+    let user = await this.service.user.getUserInfo();
+
     await this.ctx.render('news', {
       msg: msg,
-      list
+      list,
+      user
     });
   }
 

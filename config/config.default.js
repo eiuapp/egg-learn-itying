@@ -30,6 +30,8 @@ module.exports = appInfo => {
     }
   };
 
+  config.api = 'http://baidu.com';
+
   return {
     ...config,
     ...userConfig
