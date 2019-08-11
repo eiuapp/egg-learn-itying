@@ -10,7 +10,7 @@ module.exports = appInfo => {
    * built-in config
    * @type {Egg.EggAppConfig}
    **/
-  const config = exports = {};
+  const config = (exports = {});
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1565488164343_5207';
@@ -23,8 +23,15 @@ module.exports = appInfo => {
     // myAppName: 'egg',
   };
 
+  // 配置模板引擎
+  config.view = {
+    mapping: {
+      '.html': 'ejs'
+    }
+  };
+
   return {
     ...config,
-    ...userConfig,
+    ...userConfig
   };
 };
